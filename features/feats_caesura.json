@@ -1,0 +1,43 @@
+[
+    {
+        "FeatName":"Rage",
+        "Source":"Class",
+        "Descrip":"You fight with an unchecked primal ferocity in battle. Starting at 1st level, if you are not wearing heavy armor, you can use a bonus action on your turn to enter a Rage. While Raging, you gain both the benefits and drawbacks listed below:<ul><li>You have advantage on Strength saving throws and any ability checks that use your Strength or Constitution.</li><li>Whenever you hit with a weapon attack that uses your Strength, you deal a bonus 1d4 damage. At certain levels in this class, this bonus damage increases to match the Exploit Die column on the Barbarian table above.</li><li>You resist all bludgeoning, piercing, and slashing damage.</li><li>You cannot cast spells or concentrate on spells or effects.</li></ul><br/><p>Your Rage lasts until the end of your next turn, but it ends early if you become Unconscious. Your Rage is extended to the end of your next turn if you attack a Hostile creature, take damage, make a Strength check, or use your bonus action to extend it. You can maintain a Rage for up to 10 minutes.<br/><br/>You can Rage the number of times shown in the Rages column of the Barbarian table for your level. You regain one use of your Rage when you finish a short rest and all uses of your Rage when you finish a long rest.</p>"
+    },
+    {
+        "FeatName":"Unarmored Defense",
+        "Source":"Class",
+        "Descrip":"Also at 1st level, if you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+    },
+    {
+        "FeatName":"Titanic Rage",
+        "Source":"Class",
+        "Descrip":"Your fury draws out the elder power of your bloodline. When you Rage, you can choose to grow up to the size shown in the table below for your Barbarian level so long as there is room. Your Rage damage bonus also increases to match your new size category, as shown on the table below:<br/><br/><div class=\"center-box\"><table><tr><th>Barbarian Level</th><th>Max. Size</th> <th>Rage Damage</th> </tr><tr><td>3rd</td><td>Large</td><td>1d8</td></tr><tr><td>10th</td><td>Huge</td><td>1d12</td></tr><tr><td>18th</td><td>Gargantuan</td><td>2d12</td></tr></table></div><br/><p>Finally, while Raging, you can use the hurl Exploit at will without expending an Exploit Die. When you damage a target with hurl, you add your Rage damage bonus to the damage.<br/><br/>If you are Huge in size and Raging, you can use the greater hurl Exploit at will without expending an Exploit Die.</p>"
+    },
+    {
+        "FeatName":"Reckless Attack",
+        "Source":"Class",
+        "Descrip":"Starting at 2nd level, whenever you make an attack on your turn using your Strength, you can make a Reckless Attack by throwing caution to the wind. If you do, you have advantage on Strength-based attacks until the beginning of your next turn, but every attack targeting you is also made with advantage until the start of your next turn."
+    },
+    {
+        "FeatName":"Danger Sense",
+        "Source":"Class",
+        "Descrip":"The fury within your blood alerts you to dangers. Starting at 5th level, you have advantage on initiative rolls, and whenever you roll initiative, you can choose to Rage.<br/><br/>Moreover, if you are surprised when you roll initiative, you can act normally during the first round of combat so long as you Rage as part of rolling initiative."
+    },
+    {
+        "FeatName":"Elder Vitality",
+        "Source":"Class",
+        "Descrip":"Your Rage draws out an ever-increasing amount of resilience from the power that flows in your blood. When you Rage, you gain 10 temporary hit points for each size you grow above Medium: Large (10), Huge (20), or Gargantuan (30)."
+    },
+    {
+        "FeatName":"Manifest Resistance",
+        "Source":"Species",
+        "Descrip":"You have resistance to Cold damage, deriving origin plane of Risia. "
+    },
+    {
+        "FeatName":"Manifest Legacy",
+        "Source":"Species",
+        "Descrip":"You know the Ray of Frost cantrip. Once you reach 3rd level, you can cast the Armor of Agathys spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the Snilloc's Snowball Swarm spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
+    }
+    
+]
