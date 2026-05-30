@@ -360,8 +360,9 @@ th{
   .d20-divider {height: 100px;}
   .panel-content h1{font-size: 64px;}
   .panel-content {grid-auto-rows: 100px 1fr;}
-  .spell-ref-bot {height: 902px;}
+  .spell-ref-bot {height: 730px;}
   .divider {font-size: 44px;}
   .spell {font-size: 36px; padding:20px;}
   .center-box4 {margin: 20px 20px;}
+  .close-btn {font-size: 32px;}
 }
