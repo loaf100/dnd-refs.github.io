@@ -1,0 +1,41 @@
+:root{
+  --character: #a75353;
+  --character_dark: #803b3b;
+  --character_trans: #803b3b91;
+  --character_l1: #dd7258;
+  --character_l2: #e7aa78;
+}
+
+.white-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(110, 114, 172, 0.2);
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.char_head{
+  height: 176px;
+  width: 200px;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  animation: strechIn 1s ease-out forwards;
+  transition: filter 0.1s ease-in-out, transform 0.3s ease-in-out;
+  &:hover{
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255, 0.2));
+    transform: scale(1.1,1.1);
+  }
+  &:active{
+    transition: transform 0.1s;
+    transform: scale(0.9,0.9);
+  }
+}
+
+@media (orientation: portrait) {
+  .char_head {width: 300px; height:262px;}
+}
