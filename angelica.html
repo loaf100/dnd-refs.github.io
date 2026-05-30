@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angelica</title>
+  <link rel="icon" type="image/png" href="assets/images/angelica_icon.png">
+  <link rel="stylesheet" href="css/character.css">
+  <link rel="stylesheet" href="css/angelica.css">
+</head>
+<body>
+
+<audio id="bg-music" autoplay loop>
+  <source src="assets/music/music_angelica.mp3" type="audio/mpeg">
+</audio>
+
+<img src="assets/images/backgrounds/bg_angelica.jpg" class="full-cover-image">
+<img src="assets/images/backgrounds/bg_angelica.jpg" class="full-cover-image-blur">
+<div class="white-overlay"></div>
+
+<div class="center-box">
+    <div class="glass-box">
+        <h1>Angelica</h1>
+    </div>  
+</div>
+
+<div class="center-box2">
+    <div class="spell-info" id="spellDetails">
+    </div>
+</div>
+
+<div class="center-box">
+  <a href="main.html">
+    <img src="assets/images/angelica_icon.png" class="char_head">
+  </a>
+  <div class="ref-options">
+    <button class="openButton" id="openSpells"><p>Psionics</p></button>
+    <button class="openButton" id="openPersonas"><p>Personas</p></button>
+    <button class="openButton" id="openFeats"><p>Abilities</p></button>
+  </div>
+</div>
+
+<div id="overlay"></div>
+
+<div id="bottomPanel">
+    <div class="center-box3">
+        <button id="closePanel" class="close-btn">
+            <svg class="caret" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" fill="none" stroke="white" stroke-width="2"/>
+            </svg>
+        </button>
+        <div id="bottomPanelList" class="panel-content">
+
+        </div>
+    </div>
+</div>
+
+<script>
+  const panel = document.getElementById("bottomPanel");
+  const overlay = document.getElementById("overlay");
+  const panel_list = document.getElementById("bottomPanelList");
+  const spellDetails = document.getElementById("spellDetails");
+
+  document.getElementById("openSpells").onclick = () => {
+    panel.classList.add("open");
+    overlay.classList.add("active");
+    panel_list.innerHTML = `
+      <h1>Psionics</h1>
+    `;
+    const spellList = document.createElement("div");
+    spellList.className = "spell-ref-bot";
+    panel_list.appendChild(spellList);
+    getSpellList(spellList)
+  };
+
+  document.getElementById("openPersonas").onclick = () => {
+    panel.classList.add("open");
+    overlay.classList.add("active");
+    panel_list.innerHTML = `
+      <h1>Personas</h1>
+    `;
+    const personaList = document.createElement("div");
+    personaList.className = "persona-img-container";
+    panel_list.appendChild(personaList);
+    getPersonaList(personaList)
+  };
+
+  document.getElementById("openFeats").onclick = () => {
+    panel.classList.add("open");
+    overlay.classList.add("active");
+    panel_list.innerHTML = `
+      <h1>Abilities</h1>
+    `;
+    const spellList = document.createElement("div");
+    spellList.className = "spell-ref-bot";
+    panel_list.appendChild(spellList);
+    getAbilList(spellList)
+  };
+
+  document.getElementById("closePanel").onclick = closePanel;
+
+  overlay.onclick = closePanel;
+
+  function closePanel() {
+    panel.classList.remove("open");
+    overlay.classList.remove("active");
+  }
+
+  function getSpellList(spellList) {
+    fetch("assets/spell_lists/angelica.json")
+      .then(response => response.json())
+      .then(spells => {
+          buildSpellList(spells,spellList);
+      })
+      .catch(err => {
+          console.error("Error loading spells.json:", err);
+      });
+  }
+
+  function buildSpellList(spells,spellList) {
+    if (spells.length === 0) {
+        spellList.innerHTML = "<div>No spells found.</div>";
+        return;
+    }
+
+    const grouped = {};
+    spells.forEach(spell => {
+        if (!grouped[spell.Level]) grouped[spell.Level] = [];
+        grouped[spell.Level].push(spell);
+    });
+
+    for (const Level in grouped) {
+      const divider = document.createElement("div");
+      divider.className = "divider";
+      divider.textContent = Number(Level) === 0 ? "Talents": `Level ${Level} Augments`;
+      spellList.appendChild(divider);
+
+      grouped[Level].forEach(spell => {
+        const div = document.createElement("div");
+        div.className = "spell";
+        div.textContent = spell.SpellName;
+        div.onclick = () => {
+          showSpellDetails(spell);
+          panel.classList.remove("open");
+          overlay.classList.remove("active");
+        }
+        spellList.appendChild(div);
+      });
+    }
+  }
+
+  function showSpellDetails(spell) {
+      const levelDesc = Number(spell.Level) === 0 ? "Talent": `Level ${spell.Level} Augment`;
+      const highLevel = (spell.HigherLevels !== null && spell.HigherLevels !== undefined && spell.HigherLevels !== "") 
+      ? `
+        <br/>
+        <p>${spell.HigherLevels}</p>
+      ` 
+      : "";
+      const comps = [];
+      if (spell.VerbalComp) comps.push("Audible");
+      if (spell.SomaticComp) comps.push("Observable");
+      if (spell.MaterialComp && spell.MaterialCompDesc !== null) comps.push(`Material (${spell.MaterialCompDesc})`);
+      if (spell.MaterialComp && spell.MaterialCompDesc === null) comps.push("Material");
+      const compString = comps.join(", ") || "None";
+
+      spellDetails.innerHTML = `
+        <h2>${spell.SpellName}</h2>
+        <h3>${spell.School} (${levelDesc})</h3>
+        <div class="info">
+          <p><strong>Casting Time </strong>${spell.CastingTime}</p>
+          <p><strong>Range </strong>${spell.Range}</p>
+          <p><strong>Psychic Components </strong>${compString}</p>
+          <p><strong>Talent Duration </strong>${spell.Duration}</p>
+        </div>
+        <div class="spell-desc">
+          <p>${spell.Descrip}</p>
+          <p>${highLevel}</p>
+        </div>
+        <div class="center-box">
+          <img src="assets/images/page_bottom.png" class="d20-divider">
+        </div>
+      `;
+  }
+
+  function getPersonaList(pList) {
+    fetch("assets/misc_json/personas.json")
+      .then(response => response.json())
+      .then(spells => {
+          buildPersonaList(spells,pList);
+      })
+      .catch(err => {
+          console.error("Error loading spells.json:", err);
+      });
+  }
+
+  function buildPersonaList(personas,pList) {
+    if (personas.length === 0) {
+        pList.innerHTML = "<div>No spells found.</div>";
+        return;
+    }
+
+    personas.forEach(persona => {
+      const div = document.createElement("div");
+      if (persona.Status === "Locked") {
+        div.className = "persona-locked";
+      } else {
+        div.className = "persona";
+      }
+      const perImage = document.createElement("img");
+      perImage.src = persona.ImagePath;
+      perImage.className = "persona-icon";
+      div.appendChild(perImage)
+
+      const pName = document.createElement("p");
+      pName.textContent = persona.Persona;
+      div.appendChild(pName);
+
+      div.onclick = () => {
+          showPersonaDetails(persona);
+          panel.classList.remove("open");
+          overlay.classList.remove("active");
+        }
+      pList.appendChild(div);
+    });
+  }
+
+  function showPersonaDetails(persona) {
+    spellDetails.innerHTML = `
+      <h2>${persona.Persona}</h2>
+      <div class="info">
+        <br>
+        <p><i>${persona.PersonaDesc}</i></p>
+        <br>
+      </div>
+      <div class="spell-desc">
+        <p>${persona.PersonaPassive}</p>
+        <br>
+        <p>${persona.PersonaActive}</p>
+        <br>
+      </div>
+      <div class="center-box">
+          <img src="assets/images/page_bottom.png" class="d20-divider">
+      </div>
+    `;
+  }
+
+  function getAbilList(fList) {
+    fetch("assets/features/feats_angelica.json")
+      .then(response => response.json())
+      .then(feats => {
+          buildAbilList(feats,fList);
+      })
+      .catch(err => {
+          console.error("Error loading spells.json:", err);
+      });
+  }
+
+  function buildAbilList(spells,spellList) {
+    if (spells.length === 0) {
+        spellList.innerHTML = "<div>No spells found.</div>";
+        return;
+    }
+
+    const grouped = {};
+    spells.forEach(spell => {
+        if (!grouped[spell.Level]) grouped[spell.Level] = [];
+        grouped[spell.Level].push(spell);
+    });
+
+    for (const Level in grouped) {
+      grouped[Level].forEach(spell => {
+        const div = document.createElement("div");
+        div.className = "spell";
+        div.textContent = spell.SpellName;
+        div.onclick = () => {
+          showAbilDetails(spell);
+          panel.classList.remove("open");
+          overlay.classList.remove("active");
+        }
+        spellList.appendChild(div);
+      });
+    }
+  }
+
+  function showAbilDetails(spell) {
+      const highLevel = (spell.HigherLevels !== null && spell.HigherLevels !== undefined && spell.HigherLevels !== "") 
+      ? `
+        <br/>
+        <p>${spell.HigherLevels}</p>
+      ` 
+      : "";
+      const comps = [];
+      if (spell.VerbalComp) comps.push("Audible");
+      if (spell.SomaticComp) comps.push("Observable");
+      if (spell.MaterialComp && spell.MaterialCompDesc !== null) comps.push(`Material (${spell.MaterialCompDesc})`);
+      if (spell.MaterialComp && spell.MaterialCompDesc === null) comps.push("Material");
+      const compString = comps.join(", ") || "None";
+
+      spellDetails.innerHTML = `
+        <h2>${spell.SpellName}</h2>
+        <div class="info">
+          <p><strong>Casting Time </strong>${spell.CastingTime}</p>
+          <p><strong>Range </strong>${spell.Range}</p>
+          <p><strong>Psychic Components </strong>${compString}</p>
+          <p><strong>Talent Duration </strong>${spell.Duration}</p>
+        </div>
+        <div class="spell-desc">
+          <p>${spell.Descrip}</p>
+          <p>${highLevel}</p>
+        </div>
+        <div class="center-box">
+          <img src="assets/images/page_bottom.png" class="d20-divider">
+        </div>
+      `;
+  }
+
+
+  const audio = document.getElementById('bg-music');
+  audio.volume = 0.04;
+
+</script>
+
+</body>
+</html>
