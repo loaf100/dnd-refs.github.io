@@ -1,0 +1,48 @@
+[
+    {
+        "FeatName":"Spirit Mantle",
+        "Source":"Class",
+        "Descrip":"At 1st level, you can use a bonus action to cloak yourself with (or dismiss) your Spirit Mantle, an ethereal cloak of spiritual power. It marks a dramatic change in your appearance which causes you to resemble the Spirit bound to your soul. While cloaked in your Mantle, you gain the following features:<br/><br/><b>Ethereal Armor </b>The power of your Mantle wards you from harm. When you are not wearing armor or a shield, your Armor Class is equal to 10 + your Constitution modifier + your Charisma modifier.<br/><br/><b>Iridescent Strikes </b>Spiritual energies empower you. You can use your Charisma, in place of Strength, for your unarmed strike attack rolls. On hit, these unarmed strikes deal radiant damage equal to 1d6 + your Charisma modifier. Also, whenever you take the Attack action, you can make an unarmed strike as a bonus action.<br/><br/>At certain Vessel levels, the damage die of these Iridescent Strikes increases: at 5th (d8), 11th (d10), and 17th level (d12)."
+    },
+    {
+        "FeatName":"Archon Form",
+        "Source":"Class",
+        "Descrip":"Beginning at 3rd level, when you cloak yourself in your Spirit Mantle, you can draw upon even more of your Spirit's power and transform into your Archon Form, using the stat block in your Sealed Spirit description. This Archon Form uses your Proficiency Bonus (PB) and your Vessel Spell save DC.<br/><br/>You can maintain your Archon Form for 10 minutes. You then revert to your normal form unless you expend a Vessel Magic spell slot to extend the transformation by 10 minutes. You also revert if you become Unconscious, you are reduced to 0 hit points, or you use a bonus action to revert. While in your Archon Form, use the following rules:<br/><ul><li><b>Statistics.</b> Your statistics are replaced with those in your Archon Form's stat block. You do retain your alignment, personality, ability scores, and hit points. You also retain skill and saving throw proficiencies, and gain those of your Archon From.</li><li><b>Spirit Mantle.</b> In Archon Form, you are considered cloaked in your Spirit Mantle and gain all its benefits and features, such as Ethereal Armor and Iridescent Strikes.</li><li><b>Armor Class Bonus.</b> Some Archon Forms grant you a bonus to your Armor Class. This AC Bonus only applies to your Ethereal Armor from your Spirit Mantle.</li><li><b>Temporary Hit Points.</b> When you transform, you gain temporary hit points equal to twice your Vessel level. All temporary hit points you gain in Archon Form are lost when you return to your normal form.</li><li><b>Features.</b> You retain all features from your class, race, or other sources that your Archon is capable of using. This includes the ability to cast spells with Vessel Magic.</li><li><b>Equipment.</b> When you transform, you must decide if your equipment falls to the ground, merges with your Archon, or is worn by it. Worn equipment functions normally, but your DM decides if your Archon can use it. Any equipment that merges with your Archon has no effect during your transformation.</li><li><b>Uses.</b> You can transform into Archon Form once, and you regain the ability to transform again when you finish a short or long rest. If you have no uses left, you can expend a Vessel Magic spell slot to transform into your Archon Form again.</ul>"
+    },
+    {
+        "FeatName":"Fire Archon",
+        "Source":"Class",
+        "Descrip":"<img src=\"assets/images/stat_blocks/fire_archon.png\" class=\"desc-image\">"
+    },
+    {
+        "FeatName":"Elder Power",
+        "Source":"Class",
+        "Descrip":"Your Spirit infuses you with its elder elemental power. While cloaked in your Spirit Mantle, you gain Immunity to Affinity damage you inflict with Vessel spells and other abilities.<br/><br/>Moreover, when you deal Affinity damage in Archon Form, you treat a roll of 1 or 2 on any of your damage dice as a 3."
+    },
+    {
+        "FeatName":"Shimmering Lance",
+        "Source":"Unsealed Aspects",
+        "Descrip":"You learn to project your spiritual power across far distances. Any time you make an Iridescent Strike, you can choose for it to become a ranged spell attack with a range of (30/90)."
+    },
+    {
+        "FeatName":"Striking Presence",
+        "Source":"Unsealed Aspects",
+        "Descrip":"Also, while your Spirit Mantle is active, you can see magic Your bearing is enhanced by your Spirit. You gain proficiency in Deception, Intimidation, or Persuasion. While your Spirit Mantle is on, you have advantage on Charisma (Deception), Charisma (Intimidation), and Charisma (Persuasion) checks.as if by detect magic, but you must concentrate on this effect."
+    },
+    {
+        "FeatName":"Evoke Spirit",
+        "Source":"Unsealed Aspects",
+        "Descrip":"You can release a minor form of the Spirit sealed within you. You learn the find familiar spell, it counts as a Vessel spell for you, you can cast it as a ritual without providing the material component, and it doesn't count against your Spells Known.<br/><br/>When you cast find familiar, it resembles a tiny version of your Sealed Spirit, shares the creature type of your Archon, can attack on its turn, and uses the Spirit Familiar stat block.<br/><br/><img src=\"assets/images/stat_blocks/spirit_familiar.png\" class=\"desc-image\">"
+    },
+    {
+        "FeatName":"Demonic Resistance",
+        "Source":"Species",
+        "Descrip":"You have advantage on saving throws against disease and poison, and you have resistance against Necrotic and Poison damage."
+    },
+    {
+        "FeatName":"Demonic Legacy",
+        "Source":"Species",
+        "Descrip":"You know the thunderclap cantrip. When you cast thunderclap, it has a Verbal component (a roar) instead of a Somatic component. Once you reach 3rd level, you can cast the false life spell once with this trait as a 2nd-level spell, and you regain the ability to do so when you finish a long rest. Once you reach 5th level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the spell's enlarge option. You regain the ability to cast this spell when you finish a long rest. Charisma is your spellcasting ability for these spells."
+    }
+    
+]
