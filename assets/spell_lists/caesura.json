@@ -1,0 +1,53 @@
+[
+    {
+        "SpellName": "Ray of Frost",
+        "Level": 0,
+        "CastingTime": "Action",
+        "Concentration": false,
+        "Duration": "Instantaneous",
+        "School": "Evocation",
+        "Range": "60 feet",
+        "VerbalComp": true,
+        "SomaticComp": true,
+        "MaterialComp": false,
+        "MaterialCompDesc": null,
+        "Descrip": "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 Cold damage, and its Speed is reduced by 10 feet until the start of your next turn",
+        "HigherLevels": "<b>Cantrip Upgrade.</b> The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
+        "PsiCost": null,
+        "Ritual": false
+    },
+    {
+        "SpellName": "Armor of Agathys",
+        "Level": 1,
+        "CastingTime": "Bonus action",
+        "Concentration": false,
+        "Duration": "1 hour",
+        "School": "Abjuration",
+        "Range": "Self",
+        "VerbalComp": true,
+        "SomaticComp": true,
+        "MaterialComp": true,
+        "MaterialCompDesc": "a shard of blue glass",
+        "Descrip": "Protective magical frost surrounds you. You gain 5 Temporary Hit Points. If a creature hits you with a melee attack roll before the spell ends, the creature takes 5 Cold damage. The spell ends early if you have no Temporary Hit Points",
+        "HigherLevels": "<b>Using a Higher-Level Spell Slot.</b> The Temporary Hit Points and the Cold damage both increase by 5 for each spell slot level above 1.",
+        "PsiCost": null,
+        "Ritual": false
+    },
+    {
+        "SpellName": "Snilloc's Snowball Swarm",
+        "Level": 2,
+        "CastingTime": "Action",
+        "Concentration": false,
+        "Duration": "Instantaneous",
+        "School": "Evocation",
+        "Range": "90 feet",
+        "VerbalComp": true,
+        "SomaticComp": true,
+        "MaterialComp": true,
+        "MaterialCompDesc": "a piece of ice or a small white rock chip",
+        "Descrip": "A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one",
+        "HigherLevels": "<b>At Higher Levels.</b> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+        "PsiCost": null,
+        "Ritual": false
+    }
+]
